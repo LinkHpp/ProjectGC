@@ -1,1 +1,1 @@
-# PjGC
+# ProjectGC
