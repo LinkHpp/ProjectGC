@@ -8,7 +8,7 @@ public class FuncOBJ {
     }
 
     String NameFunc;
-    String Proyect;
+    String Proyect = ProyOBJ.getname();
     String Language;
 
     // Getters y Setters
