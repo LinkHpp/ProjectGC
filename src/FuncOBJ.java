@@ -1,14 +1,19 @@
+/*
+ *@author Hermes Pérez Parrondo
+ */
 
 public class FuncOBJ {
 
     // Atributos
 
     public enum Status {
-        Not_Finished, Paused, Incomplete, Complete
+        NOT_FINISHED, PAUSED, INCOMPLETE, COMPLETE
     }
 
+    public Status status;
+
     String NameFunc;
-    String Proyect = ProyOBJ.getname();
+    String Proyect;
     String Language;
 
     // Getters y Setters
@@ -37,12 +42,21 @@ public class FuncOBJ {
         this.Language = Language;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     // Constructor
 
-    public FuncOBJ(String nameFunc, String proyect, String language) {
+    public FuncOBJ(String nameFunc, String proyect, String language, Status status) {
         NameFunc = nameFunc;
         Proyect = proyect;
         Language = language;
+        status = Status.NOT_FINISHED;
     }
 
 }

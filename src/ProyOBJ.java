@@ -4,11 +4,20 @@ public class ProyOBJ{
 
     String name;
     int ver;
+    FuncOBJ[] funciones = new FuncOBJ[FuncionMeth.maxFunc];
 
     public enum Stat {
         Unfinished, //0
         Finished, //1
         OnHold, //2
+    }
+
+    public FuncOBJ[] getFunciones() {
+        return funciones;
+    }
+
+    public void setFunciones(FuncOBJ[] funciones) {
+        this.funciones = funciones;
     }
 
     public Stat stat;
