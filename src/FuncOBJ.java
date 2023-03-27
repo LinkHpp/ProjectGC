@@ -59,4 +59,15 @@ public class FuncOBJ {
         status = Status.NOT_FINISHED;
     }
 
+
+    //Methods
+
+    public void Listinfo(){
+        getNameFunc();
+        getProyect();
+        getLanguage();
+        getStatus();
+    }
+
+
 }

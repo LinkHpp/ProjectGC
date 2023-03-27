@@ -48,7 +48,16 @@ public class ProyOBJ{
         this.ver = ver;
     }
 
+    public Stat getStat() {
+        return stat;
+    }
+
+    public void setStat(Stat stat) {
+        this.stat = stat;
+    }
+
     //ctor
+
 
     public ProyOBJ(String Name, int Ver){
         name = Name;
@@ -56,5 +65,14 @@ public class ProyOBJ{
         stat = Stat.Unfinished;
         type = Type.Decomp;
     }
+
+
+    //Methods
+    /*public void Listinfo(FuncOBJ Funciones, int num){
+        System.out.println(Funciones[num].getname());
+        System.out.println(getver());
+        System.out.println(getFunciones());
+        System.out.println(getStat());
+    }*/
 
 }
