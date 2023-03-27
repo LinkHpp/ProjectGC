@@ -21,12 +21,12 @@ public class ProyOBJ{
     public Type type;
 
     //set/get
-    public String getname(void){
+    public String getname(){
 
         return name;
     }
 
-    public int getver(void){
+    public int getver(){
         
         return ver;
     }
