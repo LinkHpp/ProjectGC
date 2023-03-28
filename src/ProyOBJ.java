@@ -68,11 +68,11 @@ public class ProyOBJ{
 
 
     //Methods
-    /*public void Listinfo(FuncOBJ Funciones, int num){
-        System.out.println(Funciones[num].getname());
-        System.out.println(getver());
-        System.out.println(getFunciones());
-        System.out.println(getStat());
-    }*/
+    public void Listinfo(int num){
+        System.out.println(ProyectoMeth.Proyectos[num].getname());
+        System.out.println(ProyectoMeth.Proyectos[num].getver());
+        System.out.println(ProyectoMeth.Proyectos[num].getFunciones());
+        System.out.println(ProyectoMeth.Proyectos[num].getStat());
+    }
 
 }
