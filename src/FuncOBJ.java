@@ -68,10 +68,11 @@ public class FuncOBJ {
             System.out.println("No hay ningun Proyecto");
         }
         else{
-            System.out.println(FuncionMeth.Funciones[num].getNameFunc());
-            System.out.println(FuncionMeth.Funciones[num].getLanguage());
-            System.out.println(FuncionMeth.Funciones[num].getProyect());
-            System.out.println(FuncionMeth.Funciones[num].getStatus());
+            System.out.println("ID: " + num);
+            System.out.println("Nombre: " + FuncionMeth.Funciones[num].getNameFunc());
+            System.out.println("Lenguaje: " + FuncionMeth.Funciones[num].getLanguage());
+            System.out.println("Proyecto: " + FuncionMeth.Funciones[num].getProyect());
+            System.out.println("Status: " + FuncionMeth.Funciones[num].getStatus());
         }
         
     }

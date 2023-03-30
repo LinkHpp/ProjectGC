@@ -18,14 +18,6 @@ public class ProyOBJ{
 
     }
 
-    public FuncOBJ[] getFunciones() {
-        return funciones;
-    }
-
-    public void setFunciones(FuncOBJ[] funciones) {
-        ProyOBJ.funciones = funciones;
-    }
-
     public Stat stat;
 
     public enum Type {
@@ -81,10 +73,9 @@ public class ProyOBJ{
         }
         else{
             System.out.println("ID: " + num);
-            System.out.println(ProyectoMeth.Proyectos[num].getname());
-            System.out.println(ProyectoMeth.Proyectos[num].getver());
-            System.out.println(ProyectoMeth.Proyectos[num].getFunciones());
-            System.out.println(ProyectoMeth.Proyectos[num].getStat());
+            System.out.println("Nombre: " + ProyectoMeth.Proyectos[num].getname());
+            System.out.println("Version: " + ProyectoMeth.Proyectos[num].getver());
+            System.out.println("Status: " + ProyectoMeth.Proyectos[num].getStat());
         }
         
     }
