@@ -10,6 +10,12 @@ public class ProyOBJ{
         Unfinished, //0
         Finished, //1
         OnHold //2
+;
+
+    public boolean contains(String buscar) {
+        return false;
+    }
+
     }
 
     public FuncOBJ[] getFunciones() {
@@ -81,5 +87,6 @@ public class ProyOBJ{
         }
         
     }
+
 
 }
