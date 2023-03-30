@@ -134,4 +134,11 @@ public class ProyectoMeth {
 
     }
 
+    public static void Listar(){
+        for (int i = 0; i < ProyectoMeth.numProy; i++) {
+            ProyOBJ.Listinfo(i);
+            System.out.println("");
+        }
+    }
+
 }

@@ -12,10 +12,7 @@ public class MenuProy {
             in.nextLine();
             switch (opcion) {
                 case 1:
-                    for (int i = 0; i < ProyectoMeth.numProy; i++) {
-                        ProyOBJ.Listinfo(i);
-                        System.out.println("");
-                    }
+                    ProyectoMeth.Listar();
                     break;
                 case 2:
                     // Añadir contacto
@@ -53,4 +50,6 @@ public class MenuProy {
 
     }
 
+
+    
 }
