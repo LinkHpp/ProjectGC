@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class mnclass{
     public static void main(String[] args) {        
 
-        ProyectoMeth.agregarProyecto("Hola", 1);
+        ProyectoMeth.agregarProyecto("Hola", "1");
         
         ProyOBJ.Listinfo(0);
         

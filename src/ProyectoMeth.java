@@ -30,7 +30,7 @@ public class ProyectoMeth{
         Proyectos = proyectos;
     }
 
-    public static void agregarProyecto(String name,  int num) {
+    public static void agregarProyecto(String name,  String num) {
         if (numProy < maxCP) {
             Proyectos[numProy] = new ProyOBJ(name, num);
             numProy++;
@@ -66,7 +66,7 @@ public class ProyectoMeth{
                 break;
             case 2:
                 opcion = in.nextInt();
-                vector[pos].setver(opcion);
+                vector[pos].setver(in.nextLine());
                 break;
             case 3:
                 
@@ -90,76 +90,73 @@ public class ProyectoMeth{
                 break;
         }
 
-        public static int[] buscarContactosNombre(ProyOBJ[] Proyectos, String buscar) {
-
-            // Vector donde guardaremos las posiciones encontradas
-            int[] vpos = new int[maxCP];
-            // Nº de posiciones encontradas
-            int npos = 0;
-    
-            // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
-            // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
-            for (int i = 0; i < numProy; i++) {
-                if (vector[i].getname().toUpperCase().contains(buscar.toUpperCase())) {
-                    vpos[npos] = i;
-                    npos++;
-                }
-            }
-    
-            // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
-            vpos = Arrays.copyOf(vpos, npos);
-    
-            return vpos;
-        }
-
-        public static int[] buscarContactosEmail(Contactos[] vector, String buscar) {
-
-            // Vector donde guardaremos las posiciones encontradas
-            int[] vpos = new int[maxC];
-            // Nº de posiciones encontradas
-            int npos = 0;
-    
-            // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
-            // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
-            for (int i = 0; i < numC; i++) {
-                if (vector[i].getEmail().toUpperCase().contains(buscar.toUpperCase())) {
-                    vpos[npos] = i;
-                    npos++;
-                }
-            }
-    
-            // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
-            vpos = Arrays.copyOf(vpos, npos);
-    
-            return vpos;
-        }
-    
-        public static int[] buscarContactosTelefono(Contactos[] vector, String buscar) {
-    
-            // Vector donde guardaremos las posiciones encontradas
-            int[] vpos = new int[maxC];
-            // Nº de posiciones encontradas
-            int npos = 0;
-    
-            // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
-            // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
-            for (int i = 0; i < numC; i++) {
-                if (vector[i].getNumeroTel().toUpperCase().contains(buscar.toUpperCase())) {
-                    vpos[npos] = i;
-                    npos++;
-                }
-            }
-    
-            // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
-            vpos = Arrays.copyOf(vpos, npos);
-    
-            return vpos;
-        }
-            
-        
-
-
-
     }
+
+    public static int[] buscarNombre(ProyOBJ[] Proyectos, String buscar){
+
+        // Vector donde guardaremos las posiciones encontradas
+        int[] vpos = new int[maxCP];
+        // Nº de posiciones encontradas
+        int npos = 0;
+
+        // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
+        // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
+        for (int i = 0; i < numProy; i++) {
+            if (Proyectos[i].getname().toUpperCase().contains(buscar.toUpperCase())) {
+                vpos[npos] = i;
+                npos++;
+            }
+        }
+
+        // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
+        vpos = Arrays.copyOf(vpos, npos);
+
+        return vpos;
+    }
+
+    public static int[] buscarVersion(ProyOBJ[] vector, String buscar) {
+
+        // Vector donde guardaremos las posiciones encontradas
+        int[] vpos = new int[maxCP];
+        // Nº de posiciones encontradas
+        int npos = 0;
+
+        // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
+        // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
+        for (int i = 0; i < numProy; i++) {
+            if (vector[i].getver().toUpperCase().contains(buscar.toUpperCase())) {
+                vpos[npos] = i;
+                npos++;
+            }
+        }
+
+        // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
+        vpos = Arrays.copyOf(vpos, npos);
+
+        return vpos;
+    }
+
+   /* public static int[] buscarEstado(ProyOBJ[] vector, String buscar) {
+
+        // Vector donde guardaremos las posiciones encontradas
+        int[] vpos = new int[maxCP];
+        // Nº de posiciones encontradas
+        int npos = 0;
+
+        // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
+        // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
+        for (int i = 0; i < numProy; i++) {
+            if (vector[i].getStat().contains(buscar)){
+                vpos[npos] = i;
+                npos++;
+            }
+        }
+
+        // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
+        vpos = Arrays.copyOf(vpos, npos);
+
+        return vpos;
+    }*/
+        
 
 }

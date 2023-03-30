@@ -3,7 +3,7 @@ public class ProyOBJ{
     //Attr
 
     String name;
-    int ver;
+    String ver;
     static FuncOBJ[] funciones = new FuncOBJ[FuncionMeth.maxFunc];
 
     public enum Stat {
@@ -35,7 +35,7 @@ public class ProyOBJ{
         return name;
     }
 
-    public int getver(){
+    public String getver(){
         
         return ver;
     }
@@ -44,7 +44,7 @@ public class ProyOBJ{
         this.name = name;
     }
 
-    public void setver(int ver){
+    public void setver(String ver){
         this.ver = ver;
     }
 
@@ -59,7 +59,7 @@ public class ProyOBJ{
     //ctor
 
 
-    public ProyOBJ(String Name, int Ver){
+    public ProyOBJ(String Name, String Ver){
         name = Name;
         ver = Ver;
         stat = Stat.Unfinished;
