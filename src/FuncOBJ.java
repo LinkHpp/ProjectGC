@@ -52,7 +52,7 @@ public class FuncOBJ {
 
     // Constructor
 
-    public FuncOBJ(String nameFunc, String proyect, String language, Status status) {
+    public FuncOBJ(String nameFunc, String proyect, String language) {
         NameFunc = nameFunc;
         Proyect = proyect;
         Language = language;
@@ -63,10 +63,17 @@ public class FuncOBJ {
     //Methods
 
     public static void Listinfo(int num){
-        System.out.println(ProyOBJ.funciones[num].getNameFunc());
-        System.out.println(ProyOBJ.funciones[num].getProyect());
-        System.out.println(ProyOBJ.funciones[num].getLanguage());
-        System.out.println(ProyOBJ.funciones[num].getStatus());
+        
+        if(ProyectoMeth.numProy == 0){
+            System.out.println("No hay ningun Proyecto");
+        }
+        else{
+            System.out.println(FuncionMeth.Funciones[num].getNameFunc());
+            System.out.println(FuncionMeth.Funciones[num].getLanguage());
+            System.out.println(FuncionMeth.Funciones[num].getProyect());
+            System.out.println(FuncionMeth.Funciones[num].getStatus());
+        }
+        
     }
 
 
