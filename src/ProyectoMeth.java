@@ -119,22 +119,19 @@ public class ProyectoMeth {
         return npos;
     }
 
-    /*public static void buscarEstado(ProyOBJ[] vector) {
-        
-        for(int i = 0; i <= numProy; i++){
-            if(vector[i] == ProyOBJ.Stat.Finished){
-
-            }
-        }
-
-        
-    }*/
 
     public static void SeleccionarMenu() {
+
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Eliga que proyecto desea seleccionar:");
+        int proyecto = in.nextInt();
+        MenuFunc.menu(proyecto);
 
     }
 
     public static void Listar(){
+        System.out.println();
         for (int i = 0; i < ProyectoMeth.numProy; i++) {
             ProyOBJ.Listinfo(i);
             System.out.println("");

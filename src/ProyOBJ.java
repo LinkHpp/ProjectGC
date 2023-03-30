@@ -80,6 +80,7 @@ public class ProyOBJ{
             System.out.println("No hay ningun Proyecto");
         }
         else{
+            System.out.println("ID: " + num);
             System.out.println(ProyectoMeth.Proyectos[num].getname());
             System.out.println(ProyectoMeth.Proyectos[num].getver());
             System.out.println(ProyectoMeth.Proyectos[num].getFunciones());

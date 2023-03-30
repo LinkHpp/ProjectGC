@@ -126,17 +126,4 @@ public class FuncionMeth {
       return npos;
    }
 
-   public static int buscarEstado(ProyOBJ[] vector, String buscar) {
-
-      int npos = 0;
-
-      for (int i = 0; i < numFunc; i++) {
-         if (vector[i].getStat().contains(buscar)) {
-            npos = i;
-         }
-      }
-
-      return npos;
-   }
-
 }
