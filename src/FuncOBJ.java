@@ -62,11 +62,11 @@ public class FuncOBJ {
 
     //Methods
 
-    public void Listinfo(){
-        getNameFunc();
-        getProyect();
-        getLanguage();
-        getStatus();
+    public static void Listinfo(int num){
+        System.out.println(ProyOBJ.funciones[num].getNameFunc());
+        System.out.println(ProyOBJ.funciones[num].getProyect());
+        System.out.println(ProyOBJ.funciones[num].getLanguage());
+        System.out.println(ProyOBJ.funciones[num].getStatus());
     }
 
 

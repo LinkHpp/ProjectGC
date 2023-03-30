@@ -1,7 +1,11 @@
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Vector;
+
 public class ProyectoMeth{
 
     static int maxCP = 100;
-    static int numProy;
+    static int numProy = 0;
     static ProyOBJ[] Proyectos = new ProyOBJ[maxCP];
 
 
@@ -25,13 +29,8 @@ public class ProyectoMeth{
     public void setProyectos(ProyOBJ[] proyectos) {
         Proyectos = proyectos;
     }
-    
-    public static void verProyectosPos(int pos) {
-        System.out.println(pos + ". " + Proyectos[pos].getname() + " - " + Proyectos[pos].getver() + " - "
-                + Proyectos[pos].getFunciones());
-    }
 
-    public static void agregarProyecto(String name,  int num) {
+    public static void agregarProyecto(String name,  String num) {
         if (numProy < maxCP) {
             Proyectos[numProy] = new ProyOBJ(name, num);
             numProy++;
@@ -40,7 +39,7 @@ public class ProyectoMeth{
         }
     }
 
-    public static void eliminarContacto(int pos) {
+    public static void eliminarProyecto(int pos) {
         if (pos >= 0 && pos < numProy) {
             eliminarPosDeVector(Proyectos, pos);
             numProy--;
@@ -50,9 +49,114 @@ public class ProyectoMeth{
     }
 
     public static void eliminarPosDeVector(ProyOBJ[] vector, int pos) {
-        for (int i = pos; i < (numProy - 1); i++) {
+        for (int i = pos; i <= (numProy - 1); i++) {
             vector[i] = vector[i + 1];
         }
     }
+
+    public static void Modificar(ProyOBJ[] vector, int pos){
+        Scanner in = new Scanner(System.in);
+        System.out.println("¿Que quieres modificar?");
+        int opcion = in.nextInt();
+        in.nextLine();
+
+        switch(opcion){
+            case 1:
+                vector[pos].setname(in.nextLine());
+                break;
+            case 2:
+                opcion = in.nextInt();
+                vector[pos].setver(in.nextLine());
+                break;
+            case 3:
+                
+                
+                do{
+                    opcion = in.nextInt();
+                    if(opcion == 1){
+                        vector[pos].stat = ProyOBJ.Stat.Unfinished;
+                        break;
+                    }else if(opcion == 2){
+                        vector[pos].stat = ProyOBJ.Stat.Finished;
+                        break;
+                    }else if(opcion == 3){
+                        vector[pos].stat = ProyOBJ.Stat.OnHold;
+                        break;
+                    }else{
+                        System.out.println("Introduce un valor adequado");
+                        opcion = 0;
+                    }
+                }while(opcion == opcion);
+                break;
+        }
+
+    }
+
+    public static int[] buscarNombre(ProyOBJ[] Proyectos, String buscar){
+
+        // Vector donde guardaremos las posiciones encontradas
+        int[] vpos = new int[maxCP];
+        // Nº de posiciones encontradas
+        int npos = 0;
+
+        // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
+        // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
+        for (int i = 0; i < numProy; i++) {
+            if (Proyectos[i].getname().toUpperCase().contains(buscar.toUpperCase())) {
+                vpos[npos] = i;
+                npos++;
+            }
+        }
+
+        // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
+        vpos = Arrays.copyOf(vpos, npos);
+
+        return vpos;
+    }
+
+    public static int[] buscarVersion(ProyOBJ[] vector, String buscar) {
+
+        // Vector donde guardaremos las posiciones encontradas
+        int[] vpos = new int[maxCP];
+        // Nº de posiciones encontradas
+        int npos = 0;
+
+        // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
+        // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
+        for (int i = 0; i < numProy; i++) {
+            if (vector[i].getver().toUpperCase().contains(buscar.toUpperCase())) {
+                vpos[npos] = i;
+                npos++;
+            }
+        }
+
+        // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
+        vpos = Arrays.copyOf(vpos, npos);
+
+        return vpos;
+    }
+
+   /* public static int[] buscarEstado(ProyOBJ[] vector, String buscar) {
+
+        // Vector donde guardaremos las posiciones encontradas
+        int[] vpos = new int[maxCP];
+        // Nº de posiciones encontradas
+        int npos = 0;
+
+        // Recorremos 'vector' buscando el texto 'buscar' en sus posiciones
+        // Guardaremos en 'vpos' las posiciones que contengan 'buscar'
+        for (int i = 0; i < numProy; i++) {
+            if (vector[i].getStat().contains(buscar)){
+                vpos[npos] = i;
+                npos++;
+            }
+        }
+
+        // Reducimod el tamaño de 'vpos' al mínimo y lo devolvemos
+        vpos = Arrays.copyOf(vpos, npos);
+
+        return vpos;
+    }*/
+        
 
 }

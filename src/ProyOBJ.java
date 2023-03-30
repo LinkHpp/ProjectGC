@@ -3,13 +3,13 @@ public class ProyOBJ{
     //Attr
 
     String name;
-    int ver;
-    FuncOBJ[] funciones = new FuncOBJ[FuncionMeth.maxFunc];
+    String ver;
+    static FuncOBJ[] funciones = new FuncOBJ[FuncionMeth.maxFunc];
 
     public enum Stat {
         Unfinished, //0
         Finished, //1
-        OnHold, //2
+        OnHold //2
     }
 
     public FuncOBJ[] getFunciones() {
@@ -17,7 +17,7 @@ public class ProyOBJ{
     }
 
     public void setFunciones(FuncOBJ[] funciones) {
-        this.funciones = funciones;
+        ProyOBJ.funciones = funciones;
     }
 
     public Stat stat;
@@ -35,7 +35,7 @@ public class ProyOBJ{
         return name;
     }
 
-    public int getver(){
+    public String getver(){
         
         return ver;
     }
@@ -44,7 +44,7 @@ public class ProyOBJ{
         this.name = name;
     }
 
-    public void setver(int ver){
+    public void setver(String ver){
         this.ver = ver;
     }
 
@@ -59,7 +59,7 @@ public class ProyOBJ{
     //ctor
 
 
-    public ProyOBJ(String Name, int Ver){
+    public ProyOBJ(String Name, String Ver){
         name = Name;
         ver = Ver;
         stat = Stat.Unfinished;
@@ -68,11 +68,18 @@ public class ProyOBJ{
 
 
     //Methods
-    public void Listinfo(int num){
-        System.out.println(ProyectoMeth.Proyectos[num].getname());
-        System.out.println(ProyectoMeth.Proyectos[num].getver());
-        System.out.println(ProyectoMeth.Proyectos[num].getFunciones());
-        System.out.println(ProyectoMeth.Proyectos[num].getStat());
+    public static void Listinfo(int num){
+        
+        if(ProyectoMeth.numProy == 0){
+            System.out.println("No hay ningun Proyecto");
+        }
+        else{
+            System.out.println(ProyectoMeth.Proyectos[num].getname());
+            System.out.println(ProyectoMeth.Proyectos[num].getver());
+            System.out.println(ProyectoMeth.Proyectos[num].getFunciones());
+            System.out.println(ProyectoMeth.Proyectos[num].getStat());
+        }
+        
     }
 
 }
