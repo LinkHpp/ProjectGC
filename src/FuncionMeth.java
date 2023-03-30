@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class FuncionMeth {
@@ -7,35 +6,9 @@ public class FuncionMeth {
    static int numFunc = 0;
    static FuncOBJ[] Funciones = new FuncOBJ[maxFunc];
 
-   // Setters y Getters
-
-   public static int getMaxFunc() {
-      return maxFunc;
-   }
-
-   public static void setMaxFunc(int maxFunc) {
-      FuncionMeth.maxFunc = maxFunc;
-   }
-
-   public static int getNumFunc() {
-      return numFunc;
-   }
-
-   public static void setNumFunc(int numFunc) {
-      FuncionMeth.numFunc = numFunc;
-   }
-
-   public static FuncOBJ[] getFunciones() {
-      return Funciones;
-   }
-
-   public static void setFunciones(FuncOBJ[] funciones) {
-      Funciones = funciones;
-   }
-
    // Metodos
 
-   public static void agregarProyecto(String name, String num, String lang) {
+   public static void agregarFuncion(String name, String num, String lang) {
       if (numFunc < maxFunc) {
          Funciones[numFunc] = new FuncOBJ(name, num, lang);
          numFunc++;
@@ -44,9 +17,7 @@ public class FuncionMeth {
       }
    }
 
-
-
-   public static void eliminarProyecto(int pos) {
+   public static void eliminarFuncion(int pos) {
       if (pos >= 0 && pos < numFunc) {
          eliminarPosDeVector(Funciones, pos);
          numFunc--;
@@ -64,20 +35,28 @@ public class FuncionMeth {
    public static void Modificar(FuncOBJ[] vector, int pos) {
       Scanner in = new Scanner(System.in);
       System.out.println("¿Que quieres modificar?");
+      System.out.println("1. Nombre " +
+                           "2. Lenguaje " + "3. Estado");
       int opcion = in.nextInt();
       in.nextLine();
 
       switch (opcion) {
          case 1:
+            System.out.println("Introduce el nuevo nombre de la funcion");
             vector[pos].setNameFunc(in.nextLine());
             break;
          case 2:
-            opcion = in.nextInt();
+            System.out.println("Introduce el nuevo Lenguaje de la funcion");
             vector[pos].setLanguage(in.nextLine());
             break;
          case 3:
 
             do {
+               System.out.println("1 -> Not Finished");
+               System.out.println("2 -> Paused");
+               System.out.println("3 -> Incomplete");
+               System.out.println("4 -> Complete");
+               System.out.println("Introduce un numero: ");
                opcion = in.nextInt();
                if (opcion == 1) {
                   vector[pos].status = FuncOBJ.Status.NOT_FINISHED;
@@ -114,7 +93,7 @@ public class FuncionMeth {
       return npos;
    }
 
-   public static int buscarVersion(FuncOBJ[] vector, String buscar) {
+   public static int buscarLang(FuncOBJ[] vector, String buscar) {
 
       int npos = 0;
 
@@ -125,5 +104,19 @@ public class FuncionMeth {
       }
       return npos;
    }
+
+
+   public static void Listar(){
+      System.out.println();
+      if(numFunc == 0){
+         System.out.println("No hay funciones en este proyecto");
+      }else{
+         for (int i = 0; i < FuncionMeth.numFunc; i++) {
+            FuncOBJ.Listinfo(i);
+            System.out.println("");
+        }
+      }
+      
+  }
 
 }

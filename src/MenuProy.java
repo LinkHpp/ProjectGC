@@ -16,11 +16,11 @@ public class MenuProy {
                     ProyectoMeth.Listar();
                     break;
                 case 2:
-                    // Añadir contacto
+                    // Añadir Proyecto
                     ProyectoMeth.agregarProyecto(in.nextLine(), in.nextLine());
                     break;
                 case 3:
-                    // Eliminar contacto
+                    // Eliminar Proyecto
                     ProyectoMeth.eliminarProyecto(in.nextInt());
                     break;
                 case 4:
@@ -32,10 +32,15 @@ public class MenuProy {
                     ProyectoMeth.buscarVersion(ProyectoMeth.Proyectos, in.nextLine());
                     break;
                 case 6:
+                    // Modificar
+                    System.out.println("Que Proyecto quieres modificar");
+                    int pos = in.nextInt();
+                    FuncionMeth.Modificar(FuncionMeth.Funciones, pos);
+                case 7:
                     // Seleccionar
                     ProyectoMeth.SeleccionarMenu();
                     break;
-                case 7:
+                case 8:
                     // Salir
                     System.out.println("¡Gracias! ¡Hasta la próxima!");
                     break;
@@ -43,7 +48,7 @@ public class MenuProy {
                     System.out.println("Opción incorrecta.");
                     break;
             }
-        } while (opcion != 7);
+        } while (opcion != 8);
 
     }
 
@@ -56,8 +61,9 @@ public class MenuProy {
         System.out.println("3. Eliminar Proyectos.");
         System.out.println("4. Buscar por nombre.");
         System.out.println("5. Buscar por Version");
-        System.out.println("6. Seleccionar");
-        System.out.println("7. Salir");
+        System.out.println("6. Modificar");
+        System.out.println("7. Seleccionar");
+        System.out.println("8. Salir");
         System.out.print("¿Opción? ");
         System.out.print("");
     }

@@ -6,32 +6,6 @@ public class ProyectoMeth {
     static int numProy = 0;
     static ProyOBJ[] Proyectos = new ProyOBJ[maxCP];
 
-    // Setters y Getters
-
-    public int getMaxCP() {
-        return maxCP;
-    }
-
-    public static void setMaxCP(int MaxCP) {
-        maxCP = MaxCP;
-    }
-
-    public int getNumProy() {
-        return numProy;
-    }
-
-    public void setNumProy(int NumProy) {
-        numProy = NumProy;
-    }
-
-    public ProyOBJ[] getProyectos() {
-        return Proyectos;
-    }
-
-    public void setProyectos(ProyOBJ[] proyectos) {
-        Proyectos = proyectos;
-    }
-
     public static void agregarProyecto(String name, String num) {
         if (numProy < maxCP) {
             Proyectos[numProy] = new ProyOBJ(name, num);
@@ -119,7 +93,6 @@ public class ProyectoMeth {
         return npos;
     }
 
-
     public static void SeleccionarMenu() {
 
         Scanner in = new Scanner(System.in);
@@ -130,7 +103,7 @@ public class ProyectoMeth {
 
     }
 
-    public static void Listar(){
+    public static void Listar() {
         System.out.println();
         for (int i = 0; i < ProyectoMeth.numProy; i++) {
             ProyOBJ.Listinfo(i);
