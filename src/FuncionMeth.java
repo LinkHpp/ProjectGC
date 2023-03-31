@@ -13,7 +13,7 @@ public class FuncionMeth {
          Funciones[numFunc] = new FuncOBJ(name, num, lang);
          numFunc++;
       } else {
-         System.out.println("ERROR: No se puede agregar contacto. Lista llena.");
+         System.out.println("ERROR: No se puede agregar función. Lista llena.");
       }
    }
 
@@ -22,7 +22,7 @@ public class FuncionMeth {
          eliminarPosDeVector(Funciones, pos);
          numFunc--;
       } else {
-         System.out.println("ERROR: No se puede eliminar contacto. Posición fuera de rango.");
+         System.out.println("ERROR: No se puede eliminar función. Posición fuera de rango.");
       }
    }
 
