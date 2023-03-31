@@ -43,7 +43,7 @@ public class MenuFunc {
                     break;
                 case 6:
                     // Modificar
-                    System.out.println("Que Proyecto quieres modificar");
+                    System.out.println("Que función quieres modificar");
                     int pos = in.nextInt();
                     FuncionMeth.Modificar(FuncionMeth.Funciones, pos);
                 case 7:
