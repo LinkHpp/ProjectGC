@@ -36,6 +36,7 @@ public class MenuProy {
                     System.out.println("Que Proyecto quieres modificar");
                     int pos = in.nextInt();
                     ProyectoMeth.Modificar(ProyectoMeth.Proyectos, pos);
+                    break;
                 case 7:
                     // Seleccionar
                     ProyectoMeth.SeleccionarMenu();
