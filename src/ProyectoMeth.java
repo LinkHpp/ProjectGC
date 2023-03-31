@@ -33,6 +33,7 @@ public class ProyectoMeth {
     public static void Modificar(ProyOBJ[] vector, int pos) {
         Scanner in = new Scanner(System.in);
         System.out.println("¿Que quieres modificar?");
+        System.out.println("1. Nombre 2. Version 3. Estado");
         int opcion = in.nextInt();
         in.nextLine();
 
@@ -47,6 +48,8 @@ public class ProyectoMeth {
             case 3:
 
                 do {
+                    System.out.println("¿En que estado esta?");
+                    System.out.println("1. Unfinished 2. Finished 3. On Hold");
                     opcion = in.nextInt();
                     if (opcion == 1) {
                         vector[pos].stat = ProyOBJ.Stat.Unfinished;
