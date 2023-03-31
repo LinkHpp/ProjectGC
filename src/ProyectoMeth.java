@@ -11,7 +11,7 @@ public class ProyectoMeth {
             Proyectos[numProy] = new ProyOBJ(name, num);
             numProy++;
         } else {
-            System.out.println("ERROR: No se puede agregar contacto. Lista llena.");
+            System.out.println("ERROR: No se puede agregar proyecto. Lista llena.");
         }
     }
 
@@ -20,7 +20,7 @@ public class ProyectoMeth {
             eliminarPosDeVector(Proyectos, pos);
             numProy--;
         } else {
-            System.out.println("ERROR: No se puede eliminar contacto. Posición fuera de rango.");
+            System.out.println("ERROR: No se puede eliminar proyecto. Posición fuera de rango.");
         }
     }
 
