@@ -35,7 +35,7 @@ public class MenuProy {
                     // Modificar
                     System.out.println("Que Proyecto quieres modificar");
                     int pos = in.nextInt();
-                    FuncionMeth.Modificar(FuncionMeth.Funciones, pos);
+                    ProyctoMeth.Modificar(ProyectoMeth.Proyectos, pos);
                 case 7:
                     // Seleccionar
                     ProyectoMeth.SeleccionarMenu();
